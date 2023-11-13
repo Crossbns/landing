@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'Roboto';
+    transform: .2s linear;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin: 0;
+    background: rgb(255, 248, 211);
+    min-height: 50vh;
+    box-sizing: border-box;
+}
+
+.govegan{
+    width: 400px;
+    height: 400px;
+    margin-left: 90px;
+    float: left;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.form{
+
+    width: 500px;
+    background:#ffffff;
+    padding: 30px;
+    margin: auto;
+    margin-left: 55%;
+    margin-top: 140px;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0 5px 10px -5px rgba(0 0 0/30%);
+
+}
+
+.form-c h2{
+    color: black;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+
+.frm-input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: 1px solid;
+}
+
+.form-act{
+
+    width: 100%;
+    box-shadow: 0 5px 10px -5px rgba(0 0 0/30%);
+    padding: 12px;
+    margin: 0;
+    font-size: 16px;
+    border-radius:10px;
+    background: #F7D08A;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+.enl{
+    color: Black;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.enl a{
+    text-decoration: none;
+    color: grey;
+}

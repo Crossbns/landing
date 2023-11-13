@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'Roboto';
+    transform: .2s linear;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin: 0;
+    background: rgb(255, 248, 211);
+    min-height: 50vh;
+    box-sizing: border-box;
+}
+
+.govegan{
+    width: 400px;
+    height: 400px;
+    margin-left: 90px;
+    float: left;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.form{
+
+    width: 400px;
+    background:#ffffff;
+    padding: 30px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0 5px 10px -5px rgba(0 0 0/30%);
+
+}
+
+
+.form-cont h2{
+    color: black;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.form-cont a{
+    color: grey;
+    font-weight: 300;
+}
+
+
+.form-input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: 1px solid;
+}
+
+.form-cta{
+
+    width: 100%;
+    box-shadow: 0 5px 10px -5px rgba(0 0 0/30%);
+    padding: 12px;
+    margin: 0;
+    font-size: 16px;
+    border-radius:10px;
+    background: #F7D08A;
+    margin-top: 10px;
+    margin-bottom:20px;
+
+}
+
+
+.enlace{
+    text-decoration: none;
+    color: rgb(133, 133, 133);
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.enlace a{
+    color: rgb(133, 133, 133);
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+h1,h2{
+    color: #444;
+}
+
+.sidemenu{
+    position: fixed;
+    background:#FF8360;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidemenu .brand{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidemenu a{
+    font-size: 24px;
+    padding: 30px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+
+}
+
+.sidemenu a:hover{
+    background: white;
+    color: rgb(255, 159, 159);
+
+
+}
