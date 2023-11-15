@@ -19,7 +19,7 @@ html{
 
 body{
     margin: 0;
-    background: rgb(255, 255, 255);
+
     padding-bottom: 40px;
     min-height: 100vh;
     box-sizing: border-box;
@@ -98,7 +98,11 @@ label{
     max-height: 100%;
 }
 
-
+.cont{
+    width: 100%;
+    background-color: rgba(53, 148, 9, 0.5);
+    font-size: 30px;
+}
 
 .adv{
     position: absolute;
@@ -131,6 +135,8 @@ label{
     background-color: rgba(53, 148, 9, 0.5);
     font-size: 30px;
 }
+
+
 
 .us h2{
     width: 50%;
