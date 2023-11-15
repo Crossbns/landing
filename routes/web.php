@@ -32,6 +32,7 @@ Route::get('/user', function () {
     return view('user');
 });
 
+Route::post('/login', [LoginController::class, 'login']);
 Route::post('/user', [SignupController::class, 'regist']);
 
 Route::get('/form', function () {

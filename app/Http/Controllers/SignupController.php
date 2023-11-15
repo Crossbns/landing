@@ -3,19 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Usuario; // Asegúrate de que tu modelo Usuario esté definido
-use Illuminate\Routing\Controller; // Importa la clase Controller
+use App\Models\Usuario;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class SignupController extends Controller
 {
     public function regist(Request $request)
     {
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'Nombre' => 'required',
             'Usuario' => 'required',
-            'Contraseña' => 'required',
+            'Contraseña' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/',
             'Validación' => 'required|same:Contraseña',
         ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
 
         $usuario = new Usuario;
         $usuario->Nombre = $request->Nombre;

@@ -3,24 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Usuario; // Asegúrate de que tu modelo Usuario esté definido
-use Illuminate\Routing\Controller; // Importa la clase Controller
+use App\Models\Usuario;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class SigninController extends Controller
 {
     public function iniciar(Request $request)
     {
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'Usuario' => 'required',
-            'Contraseña' => 'required',
+            'Contraseña' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/',
         ]);
 
-        $usuario = $request->Usuario;
-        $contraseña = $request->Contraseña;
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
 
-        $usuario = Usuario::where('Usuario', $usuario)->where('Contraseña', $contraseña)->first();
+        $usuario = Usuario::where('Usuario', $request->Usuario)->first();
 
-        if ($usuario) {
+        if ($usuario && Hash::check($request->Contraseña, $usuario->Contraseña)) {
             return redirect('adm')->with('success', 'Sesión Iniciada');
         } else {
             return back()->with('error', 'Datos Inválidos');
