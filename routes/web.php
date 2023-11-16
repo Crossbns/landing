@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
-
-
+use App\Http\Controllers\DeleteController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\SigninController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,30 +33,26 @@ Route::get('/user', function () {
     return view('user');
 });
 
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/user', [SignupController::class, 'regist']);
-
 Route::get('/form', function () {
     return view('form');
 });
 
-
-
-
-
-Route::post('/add/crear', 'App\Http\Controllers\AddController@crear');
-use App\Http\Controllers\DeleteController;
-
-Route::delete('/delete/eliminar', [DeleteController::class, 'eliminar']);
-
-use App\Http\Controllers\MailController;
-
-Route::post('/mail/make', [MailController::class, 'make']);
-
-use App\Http\Controllers\SigninController;
-
+// Signin Routes
+Route::post('/login', 'App\Http\Controllers\SigninController@iniciar');
 Route::post('/signin/iniciar', [SigninController::class, 'iniciar']);
 
+// Signup Routes
+Route::post('/user', [SignupController::class, 'regist']);
 Route::post('/signup/regist', 'App\Http\Controllers\SignupController@regist');
 
+// Add Routes
+Route::post('/add/crear', 'App\Http\Controllers\AddController@crear');
+
+// Delete Routes
+Route::delete('/delete/eliminar', [DeleteController::class, 'eliminar']);
+
+// Mail Routes
+Route::post('/mail/make', [MailController::class, 'make']);
+
+// Update Routes
 Route::put('/update/modificar', 'App\Http\Controllers\UpdateController@modificar');

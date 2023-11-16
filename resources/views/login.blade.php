@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +11,7 @@
 <body>
     <img class="govegan" src="{{ asset('images/govegan.png') }}" alt="">
     <form class="form" action="" method="POST" id="form">
-
+        @csrf
         <div class="form-c">
 
             <img src="{{ asset('images/logo.png') }}" class="logo" alt="">

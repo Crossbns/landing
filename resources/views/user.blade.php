@@ -25,6 +25,7 @@
     </div>
 
     <form class="form" method="POST" id="form">
+    @csrf
         <?php
             use App\Models\Usuario;
             use App\Http\Controllers\SignupController;

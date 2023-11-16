@@ -25,7 +25,7 @@ formulario.addEventListener("submit", e=>{
     if(enter){
         par.innerHTML = warning;
     } else{
-        location.href = "crud.php"
+        location.href = "/adm"
     }
 
 })
