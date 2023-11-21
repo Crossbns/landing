@@ -90,29 +90,7 @@
                         </tbody>
 
                     </table>
-                    <!-- Formulario para registrar un nuevo usuario -->
-                    <form method="POST" action="/user">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="Nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="Nombre" name="Nombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="Usuario" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="Usuario" name="Usuario" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="Contraseña" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="Contraseña" name="Contraseña" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="Validación" class="form-label">Validación</label>
-                            <input type="password" class="form-control" id="Validación" name="Validación" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary" name="btnregist" value="ok">Registrar</button>
-                    </form>
-                    <a href="index.php" type="submit" class="btn btn-primary mt-3" name="btnregistraru"
-                        value="ok">Volver a la Página Principal</a>
+
         </div>
 
     </div>

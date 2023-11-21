@@ -12,10 +12,10 @@ class SignupController extends Controller
     public function regist(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'Nombre' => 'required',
-            'Usuario' => 'required',
-            'Contraseña' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/',
-            'Validación' => 'required|same:Contraseña',
+            'nombre' => 'required',
+            'usuario' => 'required',
+            'contraseña' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/',
+            'validación' => 'required|same:contraseña',
         ]);
 
         if ($validator->fails()) {
@@ -23,12 +23,12 @@ class SignupController extends Controller
         }
 
         $usuario = new Usuario;
-        $usuario->Nombre = $request->Nombre;
-        $usuario->Usuario = $request->Usuario;
-        $usuario->Contraseña = bcrypt($request->Contraseña);
+        $usuario->nombre = $request->Nombre;
+        $usuario->usuario = $request->Usuario;
+        $usuario->contraseña = bcrypt($request->contraseña);
 
         if ($usuario->save()) {
-            return redirect('user')->with('success', 'Registro Correcto');
+            return redirect('login')->with('success', 'Registro Correcto');
         } else {
             return back()->with('error', 'Error al Registrar');
         }

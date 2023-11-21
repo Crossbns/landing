@@ -13,15 +13,15 @@ class SigninController extends Controller
     public function iniciar(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'Usuario' => 'required',
-            'Contraseña' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/',
+            'usuario' => 'required',
+            'contraseña' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/',
         ]);
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
 
-        $usuario = Usuario::where('Usuario', $request->Usuario)->first();
+        $usuario = Usuario::where('usuario', $request->Usuario)->first();
 
         if ($usuario && Hash::check($request->Contraseña, $usuario->Contraseña)) {
             return redirect('adm')->with('success', 'Sesión Iniciada');
